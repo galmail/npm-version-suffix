@@ -12,13 +12,13 @@ Normally you could apply Continuous Integration with pipelines. But CD is a bit 
 
 ## Usage
 
-This tool can automatically add suffix to the version in the `package.json`. The default suffix is `-rc.`. You can change it by providing an environment variable `SUFFIX` as follows:
+This tool can automatically add suffix to the version in the `package.json`. The default suffix is `-rc.`. You can change it by providing an environment variable `SUFFIX` and `BUILD_NUMBER` as follows:
 
 ```JSON
 {
     "version": "1.2.3",
     "scripts": {
-        "add-suffix": "cross-env SUFFIX=beta node ./node_modules/npm-version-suffix/run-add-suffix.js",
+        "add-suffix": "cross-env SUFFIX=beta BUILD_NUMBER=1 node ./node_modules/npm-version-suffix/run-add-suffix.js",
         "remove-suffix": "cross-env SUFFIX=beta node ./node_modules/npm-version-suffix/run-remove-suffix.js"
     }
 }
